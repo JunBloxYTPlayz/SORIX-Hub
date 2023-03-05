@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("SORIX Hub", "BloodTheme")
-local Tab = Window:NewTab("Main")
-local Section = Tab:NewSection("Trying")
+local Window = Library.CreateLib("SORIX Hub Murder Mystery 2", "BloodTheme")
+local Tab = Window:NewTab("Main Scripts")
+local Section = Tab:NewSection("OP Scripts")
 Section:NewButton("ESP Players", "See Roles", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
     print("Clicked")
@@ -55,3 +55,14 @@ game.Players.LocalPlayer.Character.Humanoid.Health = 0
 --------------------------------------------------------------------------------
     print("Clicked")
 end)
+Section:NewButton("Fly Gui", "Makes You Fly", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/GDvMG4Ve"))();
+    print("Clicked")
+end)
+Section:NewButton("NoClip Gui", "Noclip", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/UMPZw1M8"))();
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("CreditToOwner")
+Section:NewLabel("Made By JunBloxYT Playz")
