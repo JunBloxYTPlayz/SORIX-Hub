@@ -1,0 +1,57 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Punch The Wall simulator | Sorix X", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Main Feature",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})local Section = Tab:AddSection({
+	Name = "Main Features"
+})
+OrionLib:MakeNotification({
+	Name = "Sub for More Script",
+	Content = "SUBSCRIBE To ScriptX",
+	Image = "https://yt3.googleusercontent.com/SWu7t0ejGgImqcNJJ78wKt2YKJWHzOr1p-IUL_YGzixBPDAVR_ZkGpi28QCU4eki-NXHAyUX=s100-c-k-c0x00ffffff-no-rj",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "Auto Win Farm",
+	Callback = function()
+	loadstring(game:HttpGet("https://scriptblox.com/raw/Punch-Wall-Simulator-Auto-Win-10216"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Farm Nearest",
+	Callback = function()
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Punch The Wall simulator | Sorix X", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Main Feature",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})local Section = Tab:AddSection({
+	Name = "Main Features"
+})
+OrionLib:MakeNotification({
+	Name = "Sub for More Script",
+	Content = "SUBSCRIBE To ScriptX",
+	Image = "https://yt3.googleusercontent.com/SWu7t0ejGgImqcNJJ78wKt2YKJWHzOr1p-IUL_YGzixBPDAVR_ZkGpi28QCU4eki-NXHAyUX=s100-c-k-c0x00ffffff-no-rj",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "Auto Win Farm",
+	Callback = function()
+	loadstring(game:HttpGet("https://scriptblox.com/raw/Punch-Wall-Simulator-Auto-Win-10216"))()
+      		print("button pressed")
+  	end    
+})
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Spin",
+	Callback = function()
+	loadstring(game:HttpGet("https://scriptblox.com/raw/Punch-Wall-Simulator-Auto-Spin-i-think-it-work-10221"))()
+      		print("button pressed")
+  	end    
+})
