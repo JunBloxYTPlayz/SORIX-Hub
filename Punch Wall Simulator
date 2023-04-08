@@ -55,3 +55,12 @@ Tab:AddButton({
       		print("button pressed")
   	end    
 })
+Tab:AddButton({
+	Name = "Inf Money And Power",
+	Callback = function()
+game:GetService("ReplicatedStorage").NL:FireServer(game:GetService("Players").LocalPlayer,999999999)
+
+game:GetService("ReplicatedStorage"):WaitForChild("GP"):FireServer(game:GetService("Players").LocalPlayer,999999999)
+      		print("button pressed")
+  	end    
+})
