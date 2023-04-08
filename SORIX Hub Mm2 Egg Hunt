@@ -1,179 +1,134 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-
-local Window = Library.CreateLib("MM2: Egg Hunt | Sorix X", "BloodTheme")
-
-local Tab = Window:NewTab("MainFeatures")
-
-
-local Tab1 = Window:NewTab("Settings")
-
-local Section = Tab:NewSection("Features")
-
-
-
-
-local CredSection = Tab1:NewSection("Settings")
-
-
-Section:NewToggle("Autofarm Eggs", "AutoFarm", function(Value)
-    a = Value
-        while a do task.wait(2.9)
-        pcall(function()
-for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if v.ClassName == "MeshPart" and v.Name == "Coin" then
-        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-        break
-    end
-end
-        end)
-        end
-end)
-
-Section:NewButton("Eggs Esp", "Shows Eggs", function() 
-for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-    if v.ClassName == "MeshPart" and v.Name == "Coin" then
-
-local BillboardGui = Instance.new("BillboardGui")
-local TextLabel = Instance.new("TextLabel")
-
-BillboardGui.Name = "Egg"
-BillboardGui.Parent = v
-BillboardGui.AlwaysOnTop = true
-BillboardGui.LightInfluence = 1
-BillboardGui.Size = UDim2.new(0, 50, 0, 50)
-BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
-
-TextLabel.Parent = BillboardGui
-TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel.BackgroundTransparency = 1
-TextLabel.Size = UDim2.new(1, 0, 1, 0)
-TextLabel.Text = "Egg"
-TextLabel.TextColor3 = Color3.new(2, 0,0) -- color
-TextLabel.TextScaled = true
-end
-end
-
-end)
-
-
-Section:NewToggle("Anti AFK", "Anti AFK", function(state)
-
-end)
+local GUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Key = Instance.new("ImageLabel")
+local Text = Instance.new("TextLabel")
+local VerifyFrame = Instance.new("Frame")
+local KeyBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local VerifyButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local GetKey = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local GuiRemoval = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
 
 
 
-Section:NewSlider("Walkspeed", "Speed", 300, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    getgenv().WalkSpeedValue = (s); --set your desired walkspeed here
+GUI.Name = "GUI"
+GUI.Parent = game.CoreGui
 
-local Player = game:service'Players'.LocalPlayer;
+Main.Name = "Main"
+Main.Parent = GUI
+Main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Main.Position = UDim2.new(0.413353175, 0, 0.441176474, 0)
+Main.Size = UDim2.new(0.172441572, 0, 0.117647059, 0)
 
-Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+UICorner.Parent = Main
 
-Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+Key.Name = "Key"
+Key.Parent = Main
+Key.BackgroundTransparency = 1.000
+Key.Position = UDim2.new(0.435148925, 0, 0.115340024, 0)
+Key.Size = UDim2.new(0.128056228, 0, 0.338304013, 0)
+Key.ZIndex = 2
+Key.Image = "rbxassetid://3926307971"
+Key.ImageColor3 = Color3.fromRGB(255, 38, 38)
+Key.ImageRectOffset = Vector2.new(44, 324)
+Key.ImageRectSize = Vector2.new(36, 36)
 
-end)
+Text.Name = "Text"
+Text.Parent = Main
+Text.BackgroundColor3 = Color3.fromRGB(26, 26, 2)
+Text.BackgroundTransparency = 1.000
+Text.BorderColor3 = Color3.fromRGB(26, 26, 26)
+Text.Position = UDim2.new(0.0327102803, 0, 0.370000005, 0)
+Text.Size = UDim2.new(0.934579492, 0, 0.5, 0)
+Text.Font = Enum.Font.SourceSansSemibold
+Text.Text = "Key Required"
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextSize = 35.000
+Text.TextWrapped = true
 
-Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
-end)
+VerifyFrame.Name = "Verify Frame"
+VerifyFrame.Parent = GUI
+VerifyFrame.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+VerifyFrame.Position = UDim2.new(0.388749182, 0, 0.569411755, 0)
+VerifyFrame.Size = UDim2.new(0.222401291, 0, 0.15529412, 0)
 
+KeyBox.Name = "Key Box"
+KeyBox.Parent = VerifyFrame
+KeyBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+KeyBox.Position = UDim2.new(0.216714069, 0, 0.0933334902, 0)
+KeyBox.Size = UDim2.new(0.552679658, 0, 0.298396379, 0)
+KeyBox.Font = Enum.Font.SourceSansSemibold
+KeyBox.PlaceholderColor3 = Color3.fromRGB(80, 80, 80)
+KeyBox.PlaceholderText = "Key"
+KeyBox.Text = "hi"
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.TextScaled = true
+KeyBox.TextSize = 14.000
+KeyBox.TextWrapped = true
 
-Section:NewToggle("Infinite Jump", "Infinite Jump", function(state)
+UICorner_2.Parent = KeyBox
 
- if state then
-_G.infinjump = true
-local Player = game:GetService("Players").LocalPlayer
-local Mouse = Player:GetMouse()
-Mouse.KeyDown:connect(function(k)
-if _G.infinjump then
-if k:byte() == 32 then
-Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-Humanoid:ChangeState("Jumping")
-wait(0.1)
-Humanoid:ChangeState("Seated")
-end
-end
-end)
-local Player = game:GetService("Players").LocalPlayer
-local Mouse = Player:GetMouse()
-    else
-if _G.infinjump == true then
-_G.infinjump = false
+if identifyexecutor() == "Synapse X" then
+	request = syn.request
+elseif identifyexecutor() == "Krnl" then
+	request = http_request
 else
-_G.infinjump = true
+	request = request
 end
-end
-            end)
-Section:NewButton("ESP Players", "See Roles", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
-    print("Clicked")
-end) 
-Section:NewButton("Players HitBox", "More Range", function()
-_G.HeadSize = 20
-_G.Disabled = true
- 
-game:GetService('RunService').RenderStepped:connect(function()
-if _G.Disabled then
-for i,v in next, game:GetService('Players'):GetPlayers() do
-if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-pcall(function()
-v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-v.Character.HumanoidRootPart.Transparency = 0.7
-v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
-v.Character.HumanoidRootPart.Material = "Neon"
-v.Character.HumanoidRootPart.CanCollide = false
-end)
-end
-end
-end
-end)
-    print("Clicked")
-end)
-Section:NewButton("Get All Guns", "Get guns for Free", function()
----------------------------------------------------------------------------------------
- 
--- You can edit min and max, if you want more of each set max higher
-local WeaponOwnRange = {
-min=1,
-max=5
-}
- 
-local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
- 
-local newOwned = {}
- 
-for i,v in next, DataBase.Item do
-newOwned[i] = math.random(WeaponOwnRange.min, WeaponOwnRange.max) -- newOwned[Weapon]: ItemCount
-end
- 
-local PlayerWeapons = PlayerData.Weapons
- 
-game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
-PlayerWeapons.Owned = newOwned
-end)
- 
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
- 
---------------------------------------------------------------------------------
-    print("Clicked")
-end)
-Section:NewButton("Fly Gui", "Makes You Fly", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/GDvMG4Ve"))();
-    print("Clicked")
-end)
-Section:NewButton("NoClip Gui", "Noclip", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/UMPZw1M8"))();
-    print("Clicked")
+
+local suskey = request({Url = "https://pastebin.com/raw/22M8TBW6",Method = "GET"}).Body
+
+VerifyButton.Name = "Verify Button"
+VerifyButton.Parent = VerifyFrame
+VerifyButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+VerifyButton.Position = UDim2.new(0.13767235, 0, 0.491583407, 0)
+VerifyButton.Size = UDim2.new(0.724637687, 0, 0.378787875, 0)
+VerifyButton.Font = Enum.Font.SourceSansSemibold
+VerifyButton.Text = "Verify Key"
+VerifyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+VerifyButton.TextSize = 34.000
+VerifyButton.MouseButton1Down:connect(function()
+	if KeyBox.Text == suskey then
+		local TweenService = game:GetService("TweenService")
+		local key = game.CoreGui.GUI.Main.Key 
+		local info = TweenInfo.new(0.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false)
+
+		local tween = TweenService:Create(key, info, {ImageColor3 = Color3.fromRGB(106, 255, 106)})
+
+		tween:Play()
+		
+		game.StarterGui:SetCore("SendNotification", {Title = "correct key", Text = "welcome", Icon = "rbxassetid://12206884774", Duration = 4})
+
+		wait(7)
+
+		GUI.Parent = nil
+
+loadstring(game:HttpGet("https://pastebin.com/raw/JWEP6jQx"))();
+
+	end
 end)
 
+UICorner_3.Parent = VerifyButton
 
+UICorner_4.Parent = VerifyFrame
 
-Section:NewButton("Reset", "Reset", function() 
-     game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
-
-CredSection:NewLabel("Made By ScriptX")
-
-
-CredSection:NewKeybind("Toggle UI", "Toggle The UI", Enum.KeyCode.L, function()
-	Library:ToggleUI()
+GetKey.Name = "Get-Key-Here"
+GetKey.Parent = VerifyFrame
+GetKey.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+GetKey.Position = UDim2.new(0.235357329, 0, -1.38818645, 0)
+GetKey.Size = UDim2.new(0.505842388, 0, 0.447802067, 0)
+GetKey.Font = Enum.Font.SourceSansSemibold
+GetKey.Text = "GetKey"
+GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.TextSize = 29.000
+GetKey.TextWrapped = true
+GetKey.MouseButton1Down:connect(function()
+	setclipboard("https://rekonise.com/key-system-scriptx-itpc1")
+	game.StarterGui:SetCore("SendNotification", {Title = "Key link copied", Text = "Paste the link in a browser", Icon = "", Duration = 5})
 end)
